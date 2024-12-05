@@ -15,11 +15,11 @@ AS $$
 BEGIN
     IF EXISTS (SELECT 1 FROM PhoneBook WHERE phone_number = 7967679) THEN
         UPDATE PhoneBook
-        SET first_name = "1st player", last_name = "surname"
+        SET first_name = "Aya", last_name = "Turganova"
         WHERE phone_number = 7967679;
     ELSE
         INSERT INTO PhoneBook (first_name, last_name, phone_number)
-        VALUES ("1st player", "surname", 7967679);
+        VALUES ("Aya", "Turganova", 7967679);
     END IF;
 END;
 $$ LANGUAGE plpgsql;
@@ -38,7 +38,7 @@ BEGIN
         phone_number := split_part(user_record, ',', 3);
         
             INSERT INTO PhoneBook (first_name, last_name, phone_number)
-            VALUES ("first", "last", "number");
+            VALUES (first_name, last_name, phone_number);
         END IF;
     END LOOP;
 END;
